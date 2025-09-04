@@ -1,0 +1,259 @@
+{
+  "SourceName": "",
+  "databricks_catalogname": "",
+  "prunedays": "10",
+  "targetdatasetname": "",
+  "initialloaddate": "",
+  "databricks_bronze_layer_schema_name": "",
+  "databricks_silver_layer_schema_name": "",
+  "databricks_silver_core_layer_schema_name": "",
+  "databricks_gold_layer_schema_name": "",
+  "errorlogdataset": "",
+  "firsttimeload": "Y",
+  "cdcloaddetaildataset": "",
+  "config_values": {
+    "sqlserver": {
+      "user": "your_username_here",
+      "password": "your_password_here",
+      "database_host": "your_host_here",
+      "database_port": "1433",
+      "database_name": "your_database_name_here"
+    },
+    "bigquery": {
+      "project_name": "",
+      "credential_file_path": "",
+      "datasetname": ""
+    },
+ "oracle": {
+      "host": "",
+      "port": "",
+      "service_name": "",
+      "user": "",
+      "password": ""
+    }
+  },
+  "TableList": {
+    "OracleEbs-AP_INVOICE_PAYMENTS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "INVOICE_PAYMENT_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_CHECKS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "CHECK_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-PO_HEADERS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "PO_HEADER_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-PO_LINES_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "PO_LINE_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-PO_LINE_LOCATIONS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "LINE_LOCATION_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-PO_DISTRIBUTIONS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "PO_DISTRIBUTION_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-GL_LEDGERS": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "LEDGER_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-GL_DAILY_RATES": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ParentSystemId",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_HOLDS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "HOLD_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_INVOICES_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "INVOICE_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_INVOICE_LINES_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "INVOICE_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_INVOICE_DISTRIBUTIONS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "INVOICE_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-HR_ALL_ORGANIZATION_UNITS": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ORGANIZATION_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_TERMS": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "TERM_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-HR_LOCATIONS_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "LOCATION_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-AP_SUPPLIER_SITES_ALL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "VENDOR_SITE_ID",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+    "OracleEbs-IBY_PAYMENT_METHODS_TL": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "PAYMENT_METHOD_CODE",
+      "CDCColumnName": "LAST_UPDATE_DATE",
+      "SoftDeleteField": "InactiveInd",
+      "ArchiveKey": "LAST_UPDATE_DATE",
+      "ArchiveDate": "2024-01-01",
+      "Initialloaddate": "1900-01-01"
+    },
+
+  "OracleEbs-FND_FLEX_VALUES": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "FLEX_VALUE_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  },
+  "OracleEbs-PO_REQUISITION_HEADERS_ALL": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "requisition_header_id",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  },
+  "OracleEbs-PO_REQUISITION_LINES_ALL": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "REQUISITION_LINE_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  },
+  "OracleEbs-PO_REQ_DISTRIBUTIONS_ALL": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "DISTRIBUTION_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  },
+  "OracleEbs-PO_HEADERS_ALL": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "PO_HEADER_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  },
+  "OracleEbs-FND_USER": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "USER_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  }
+
+,
+  "OracleEbs-AP_PAYMENT_SCHEDULES_ALL": {
+    "IsIncremental": "Y",
+    "PrimaryKey": "INVOICE_ID",
+    "CDCColumnName": "LAST_UPDATE_DATE",
+    "SoftDeleteField": "InactiveInd",
+    "ArchiveKey": "LAST_UPDATE_DATE",
+    "ArchiveDate": "2024-01-01",
+    "Initialloaddate": "1900-01-01"
+  }
+
+
+
+  }
+}
