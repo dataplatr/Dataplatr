@@ -1,0 +1,74 @@
+{
+  "SourceName": "oracle",
+  "databricks_catalogname": "demo_uc",
+  "prunedays": "10",
+  "targetdatasetname": "Edw",
+  "initialloaddate": "",
+  "databricks_bronze_layer_schema_name": "odsstage",
+  "databricks_silver_layer_schema_name": "ods",
+  "databricks_silver_core_layer_schema_name": "edw",
+  "databricks_gold_layer_schema_name": "edwbi",
+  "errorlogdataset": "edw",
+  "firsttimeload": "Y",
+  "cdcloaddetaildataset": "ods",
+  "cc_edw_table_name": "PureCloud-Queue_Edw,Service-dimServiceFunction_Edw,PureCloud_QueueCampaignInterval_Edw,Location-dimTimeZone_Edw,Activity-dimInteractionType_Edw,Location-dimLocation_Edw,Service-dimRoutingDirection_Edw,Service-dimChannel_Edw,Service-dimServiceAttribute_Edw,Service-dimServiceFunctionType_Edw,System-dimSystem_Edw,Service-dimServiceExpanded_Edw",
+  "config_values": {
+    "sqlserver": {
+      "user": "your_username_here",
+      "password": "your_password_here",
+      "database_host": "your_host_here",
+      "database_port": "1433",
+      "database_name": "your_database_name_here"
+    },
+    "bigquery": {
+      "project_name": "dataplatr-sandbox",
+      "credential_file_path": "dbfs:/FileStore/dataplatr_sandbox_005408313c86-1.json",
+      "datasetname": "Ods"
+    },
+    "oracle": {
+      "host": "oracledb.cjuei626kskq.us-east-2.rds.amazonaws.com",
+      "port": "1521",
+      "service_name": "ORCL",
+      "user": "admin",
+      "password": "Dataplatr230"
+    }
+  },
+  "TableList": {
+    "service_contract": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"account": { 
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"  
+    },                    
+	"opportunity": { 
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"  
+    },                    
+	"lead": { 
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"contact": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"task": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"case": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"campaign": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+	"proposal": {
+      "IsIncremental": "Y",
+      "PrimaryKey": "ID"
+    },
+  }
+}
