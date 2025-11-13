@@ -17,6 +17,7 @@
 ---
 
 ## Architecture
+<img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/bf0f7261-65dc-4a18-846f-a8ae29fc17b3" />
 
 **Figure 1: Reference Architecture**
 
@@ -32,8 +33,12 @@
 ---
 
 ## Data Flow Diagram
+<img width="1262" height="847" alt="image" src="https://github.com/user-attachments/assets/b4d610dc-73b4-4678-824d-156e4362c95c" />
+
 
 **Figure 2:** GL Balances Data Flow Diagram  
+<img width="1264" height="755" alt="image" src="https://github.com/user-attachments/assets/2d2cd3dd-d720-422d-a195-c623fd9a9603" />
+
 **Figure 3:** GL Journals Data Flow Diagram
 
 - Data flows from EBS and Hyperion into the GCP ecosystem.
@@ -45,6 +50,7 @@
 ---
 
 ## Data Models
+          <img width="657" height="373" alt="image" src="https://github.com/user-attachments/assets/a58c3c1f-97a0-4fb0-907f-46677b691a74" />
 
 **Figure 4:** Data Model Summary
 
@@ -62,8 +68,11 @@
 ---
 
 ## GL Balances Model
+ <img width="842" height="476" alt="image" src="https://github.com/user-attachments/assets/c8461e9d-1419-4f19-8445-5f66808eefa5" />
 
 **Figure 5:** GL Balances Data Integration  
+<img width="776" height="420" alt="image" src="https://github.com/user-attachments/assets/e3e1f283-e979-4d33-8dc3-3fba1172405f" />
+
 **Figure 6:** GL Balances Data Model
 
 - Presents a summarized and detailed view of general ledger accounting — capturing monthly activity and balance details.
@@ -77,8 +86,11 @@
 ---
 
 ## GL Journals Model
+<img width="840" height="459" alt="image" src="https://github.com/user-attachments/assets/48070693-72a9-4c9a-9fa9-7910530cb63d" />
 
 **Figure 7:** GL Journal Data Integration  
+<img width="898" height="458" alt="image" src="https://github.com/user-attachments/assets/c8fc7566-a398-401c-9c6a-9d5c3cd56140" />
+
 **Figure 8:** GL Journal Data Model
 
 - Extends journal reporting beyond traditional entries by integrating with **subledgers** (AP and AR).
@@ -96,8 +108,11 @@
 ---
 
 ## Incremental Update using Cloud Composer
+<img width="947" height="250" alt="image" src="https://github.com/user-attachments/assets/939578fa-e4d8-469c-8453-5346acb1324c" />
 
 **Figure 9:** Cloud Composer Solution Overview  
+<img width="804" height="476" alt="image" src="https://github.com/user-attachments/assets/dedbdaef-5369-454f-bce1-7ac2da869e32" />
+
 **Figure 10:** Sample Cloud Composer Data Flow
 
 - Data is ingested into BigQuery via Cloud Composer (Airflow).
@@ -113,6 +128,12 @@
 ## Key Looker Dashboards and Visualizations
 
 ### GL Balances Dashboard
+<img width="958" height="448" alt="image" src="https://github.com/user-attachments/assets/bf4b7ebc-9946-4ce3-827d-ceb005f4b012" />
+<img width="981" height="569" alt="image" src="https://github.com/user-attachments/assets/8c9f6b17-2c71-4652-a630-b038a5fedacd" />
+<img width="981" height="304" alt="image" src="https://github.com/user-attachments/assets/7a163253-ad78-4543-90d7-c6286c2ffe1c" />
+
+
+
 
 Provides a financial snapshot per fiscal period, enabling detailed balance analysis across segments and hierarchies.
 
@@ -130,8 +151,9 @@ Provides a financial snapshot per fiscal period, enabling detailed balance analy
 ---
 
 ### GL Journal Details Dashboard
+<img width="981" height="304" alt="image" src="https://github.com/user-attachments/assets/e780b77b-0e70-4e13-9caf-04e2c426074c" />
 
-Integrates journal-level data with AP and AR modules for supplier, customer, and invoice-level visibility.
+The Integrated GL Journals Details Dashboard stands out as a powerful tool offering a nuanced exploration of journal entries, uniquely providing insights at the levels of suppliers, customers, and invoices. This dashboard goes beyond traditional GL views, integrating seamlessly with Accounts Payable (AP) and Accounts Receivable (AR) to enhance visibility and facilitate robust account reconciliation between the General Ledger (GL) and subledger modules.
 
 **Key Features:**
 - Journal details with complete audit trail.
