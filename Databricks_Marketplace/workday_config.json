@@ -1,0 +1,20 @@
+{
+  "SourceName": "WorkDay",
+  "databricks_catalogname": "demo_uc",
+  "targetdatasetname": "Edw",
+  "initialloaddate": "",
+  "databricks_bronze_layer_schema_name": "odsstage",
+  "databricks_silver_layer_schema_name": "ods",
+  "databricks_gold_layer_schema_name": "edwbi",
+  "errorlogdataset": "edw",
+  "cdcloaddetaildataset": "ods",
+  "config_values": {
+    "WorkDay": {
+    "WORKDAY_BASE_URL":"BASE_URL",
+    "WORKDAY_TENANT":"TENANT",
+    "WORKDAY_CLIENT_ID":"CLIENT_ID",
+    "WORKDAY_CLIENT_SECRET": "CLIENT_SECRET",
+    "WORKDAY_REFRESH_TOKEN" : "REFRESH_TOKEN"
+    }   
+  }
+  }
