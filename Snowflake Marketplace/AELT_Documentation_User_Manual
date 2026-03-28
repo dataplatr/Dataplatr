@@ -198,17 +198,52 @@ SYSTEM$REFERENCE('SECRET', 'DEV_DB.SCT.vertex_sa', 'PERSISTENT', 'READ'));
 
 6. Database access:
 
+## Consumer Database/Schema Access (Required)
 
- -- Grant the app permission to use the consumer's database
-GRANT CALLER USAGE ON DATABASE DEV_DB TO APPLICATION AI_ELT_APP;
-Grant usage on database dev_db to application ai_elt_app;
- 
--- Grant inherited usage on all schemas in the database
-GRANT INHERITED CALLER USAGE ON ALL SCHEMAS IN DATABASE DEV_DB TO APPLICATION AI_ELT_APP;
- 
--- Grant inherited SELECT on all tables (for reading data)
-GRANT INHERITED CALLER SELECT ON ALL TABLES IN DATABASE DEV_DB TO APPLICATION AI_ELT_APP;
+After installation, the consumer must grant caller privileges to the app and then set the consumer DB/schema configuration.
 
+1. Grant caller privileges to the application:
+
+```sql
+-- Required: caller usage on consumer database
+GRANT CALLER USAGE ON DATABASE <consumer_db> TO APPLICATION <app_name>;
+
+-- Recommended: inherited usage on all schemas in that database
+GRANT INHERITED CALLER USAGE ON ALL SCHEMAS IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+
+-- Required for read flows
+GRANT INHERITED CALLER SELECT ON ALL TABLES IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+
+-- For the app writes to consumer tables)
+GRANT INHERITED CALLER INSERT ON ALL TABLES IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+GRANT INHERITED CALLER UPDATE ON ALL TABLES IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+GRANT INHERITED CALLER DELETE ON ALL TABLES IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+
+-- For the app to create objects in consumer schemas)
+GRANT INHERITED CALLER CREATE TABLE, CREATE VIEW, CREATE STAGE
+  ON ALL SCHEMAS IN DATABASE <consumer_db>
+  TO APPLICATION <app_name>;
+```
+
+Configure the app to use the selected database/schema:
+
+```sql
+CALL <app_name>.CONFIG.SET_CONSUMER_DB_SCHEMA('<consumer_db>', '<consumer_schema>');
+```
+Optional verification:
+
+```sql
+CALL <app_name>.CONFIG.GET_CONSUMER_CONFIG();
+```
+
+Notes:
+- `SET_CONSUMER_DB_SCHEMA` runs with restricted caller's rights and validates access using caller privileges.
+- App-internal config is stored by owner-rights helper procedures in `APP_PRIVATE.CONSUMER_CONFIG`.
 
 7. Activation and Launch steps:
 ---===========app activation====================
